@@ -1,6 +1,6 @@
 export class Categoria {
-  idCategoria: number=0;
+  idCategoria?: number;
   nombreCategoria: string="";
   descripcionCategoria: string="";
-  createAt: Date = new Date();
+  createAt: string = new Date().toISOString().split('T')[0];
 }
