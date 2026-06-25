@@ -1,9 +1,21 @@
 <div class="mb-3"></div>
 
 <div class="container">
-  <div class="card border-primary text">
+  <div class="card border-success text-center">
+    <div class="card-header bg-success text-white">
+      <h2>Clínica Veterinaria San José 🐾</h2>
+    </div>
     <div class="card-body">
-      <img src="https://www.ionos.es/digitalguide/fileadmin/DigitalGuide/Teaser/wordpress-teaser.jpg" class="card-img-top" alt="...">
+      <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?q=80&w=1200&auto=format&fit=crop" class="card-img-top mb-3" alt="Veterinaria" style="max-height: 400px; object-fit: cover; border-radius: 8px;">
+      <h5 class="card-title">Bienvenido al Sistema de Gestión de la Clínica</h5>
+      <p class="card-text">Utiliza el menú superior para administrar los registros de nuestros <b>Propietarios</b> y sus <b>Mascotas</b> de forma rápida y sencilla.</p>
+      <div class="d-flex justify-content-center gap-3">
+        <a [routerLink]="'/ListaMascotas'" class="btn btn-success">Ver Mascotas</a>
+        <a [routerLink]="'/ListaPropietarios'" class="btn btn-outline-success">Ver Propietarios</a>
+      </div>
+    </div>
+    <div class="card-footer text-muted">
+      Cuidado profesional para tus mejores amigos
     </div>
   </div>
 </div>

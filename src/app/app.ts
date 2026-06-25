@@ -12,6 +12,6 @@ import { Header } from '../components/shared/header/header';
   styleUrl: './app.css'
 })
 export class App {
-  titulo : String = "Mi primera app"
-  protected readonly title = signal('Ejercicio1');
+  titulo : String = "Veterinaria San José"
+  protected readonly title = signal('VeterinariaApp');
 }

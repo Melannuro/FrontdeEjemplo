@@ -1,0 +1,48 @@
+<div class="mb-3">
+  <div class="container">
+    <div class="card border-success text-center">
+      <div class="card-header text-primary">
+        <h2 class="card-title">
+          {{ titulo }}
+        </h2>
+      </div>
+      <div class="card-body text-primary">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>idMascota</th>
+              <th>Nombre</th>
+              <th>Especie</th>
+              <th>Edad (Años)</th>
+              <th>Dueño/Propietario</th>
+              <th>Fecha de Registro</th>
+              <th colspan="2">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (lm of (listaMascotas()); track lm.idMascota) {
+              <tr>
+                <td>{{ lm.idMascota }}</td>
+                <td>{{ lm.nombreMascota }}</td>
+                <td>{{ lm.especieMascota }}</td>
+                <td>{{ lm.edadMascota }}</td>
+                <td>{{ lm.idPropietario?.nombrePropietario || 'Sin Propietario' }}</td>
+                <td>{{ lm.createAt }}</td>
+                <td>
+                  <button class="btn btn-outline-success" (click)="irAForm(lm)">Actualizar</button>
+                </td>
+                <td>
+                  <button class="btn btn-danger" (click)="eliminar(lm)">Eliminar</button>
+                </td>
+              </tr>
+            } @empty {
+              <tr>
+                <td colspan="8">No hay mascotas registradas.</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

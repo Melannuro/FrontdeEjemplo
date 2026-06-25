@@ -1,0 +1,32 @@
+<div class="mb-3">
+  <div class="container">
+    <div class="card border-success">
+      <div class="card-header text-primary text-center">
+        <h2 class="card-title">
+          {{ id() ? 'Actualizar Propietario' : title }}
+        </h2>
+      </div>
+
+      <div class="card-body text-primary">
+        <form #propietarioForm="ngForm" (ngSubmit)="guardar(propietarioForm)">
+          <div class="mb-3">
+            <label for="nombrePropietario" class="form-label">Nombre Completo</label>
+            <input type="text" id="nombrePropietario" name="nombrePropietario" class="form-control mb-3" placeholder="Ingrese el nombre completo del propietario" [(ngModel)]="elPropietario().nombrePropietario" required>
+
+            <label for="telefonoPropietario" class="form-label">Teléfono</label>
+            <input type="text" id="telefonoPropietario" name="telefonoPropietario" class="form-control mb-3" placeholder="Ingrese el teléfono del propietario" [(ngModel)]="elPropietario().telefonoPropietario" required>
+          </div>
+
+          <div class="d-flex gap-2 justify-content-end">
+            <button type="button" class="btn btn-secondary" (click)="cancelar()">
+              Cancelar
+            </button>
+            <button type="submit" class="btn" [ngClass]="id() ? 'btn-warning' : 'btn-primary'" [disabled]="propietarioForm.invalid">
+              {{ id() ? 'Actualizar' : 'Guardar' }}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="mb-3">
+  <div class="container">
+    <div class="card border-success text-center">
+      <div class="card-header text-primary">
+        <h2 class="card-title">
+          {{ titulo }}
+        </h2>
+      </div>
+      <div class="card-body text-primary">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>idPropietario</th>
+              <th>Nombre Completo</th>
+              <th>Teléfono</th>
+              <th>Fecha de Registro</th>
+              <th colspan="2">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (lp of (listaPropietarios()); track lp.idPropietario) {
+              <tr>
+                <td>{{ lp.idPropietario }}</td>
+                <td>{{ lp.nombrePropietario }}</td>
+                <td>{{ lp.telefonoPropietario }}</td>
+                <td>{{ lp.createAt }}</td>
+                <td>
+                  <button class="btn btn-outline-success" (click)="irAForm(lp)">Actualizar</button>
+                </td>
+                <td>
+                  <button class="btn btn-danger" (click)="eliminar(lp)">Eliminar</button>
+                </td>
+              </tr>
+            } @empty {
+              <tr>
+                <td colspan="6">No hay propietarios registrados.</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
